@@ -1,7 +1,7 @@
 export default {
   getFormData: (state) => {
     const post = state.post;
-    const customAllPosts = post => ({
+    const customPost = post => ({
         title: post.title,
         description: post.description,
         image_path: post.image_path,
@@ -10,6 +10,6 @@ export default {
         contents: post.contents,
         contentsHtml: post.contents_html,
     });
-    return customAllPosts(post);
+    return customPost(post);
   },
 };

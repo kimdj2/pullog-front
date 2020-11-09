@@ -31,6 +31,7 @@
                   :src="post.image_path"
                   class="white--text align-center justify-center"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  min-height="150"
                   @load="masonryLoad"
                 >
                 </v-img>
@@ -39,6 +40,7 @@
                   v-else
                   class="align-center justify-center"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  min-height="150"
                   @load="masonryLoad"
                 >
                   <v-card-subtitle v-text="post.title" class="black--text text-center font-weight-bold text-h6"></v-card-subtitle>

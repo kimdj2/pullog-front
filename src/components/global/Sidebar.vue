@@ -4,6 +4,8 @@
         <Category />
         <br/>
         <Archive />
+        <br/>
+        <RecentPost />
       </div>
     </v-col>
 </template>
@@ -11,6 +13,7 @@
 <script>
 import Category from '@/components/global/Category'
 import Archive from '@/components/global/Archive'
+import RecentPost from '@/components/global/RecentPost'
 import _ from 'lodash'
 
 export default {
@@ -56,6 +59,7 @@ export default {
   components: {
     Category,
     Archive,
+    RecentPost,
   }
 }
 </script>

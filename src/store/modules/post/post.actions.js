@@ -37,12 +37,13 @@ export default {
     commit(types.GET_POST_PENDING);
     try {
       const {
-        data: { post, beforePost, nextPost },
+        data: { post, beforePost, nextPost, relatedPosts },
       } = await API.get(`/app/boards/${postId}`);
       commit(types.GET_POST_SUCCESS, {
         post,
         beforePost,
         nextPost,
+        relatedPosts,
       });
     } catch (error) {
       commit(types.GET_POST_FAIL);

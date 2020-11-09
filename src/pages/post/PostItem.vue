@@ -12,13 +12,13 @@
       v-else
     >
       <post-move :beforePost="beforePost" :nextPost="nextPost" @movePage="movePage"/>
-      <v-card-title class="pt-2 font-weight-black text-md-h4">
+      <v-card-title class="pt-2 font-weight-black text-sm-h5">
         {{post.title}}
       </v-card-title>
-      <v-card-subtitle class="font-weight-black">
+      <v-card-subtitle class="font-weight-black mx-2">
         {{callGetParseDate(post.created_at)}}
       </v-card-subtitle>
-      <v-card-text>
+      <v-card-text class="pb-2">
         <span         
           v-for="tag in post.tag_list"
           :key="tag"
@@ -38,7 +38,7 @@
         </v-chip>
         </span>
       </v-card-text>
-      <v-divider class="mx-4 pb-6"></v-divider>
+      <v-divider class="mx-4"></v-divider>
       <v-img
         v-if="post.image_path"
         :src="post.image_path"
@@ -46,10 +46,9 @@
         gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
       >
       </v-img>
-      <v-card-subtitle class="font-weight-black text-md-h6">
+      <v-card-subtitle class="font-weight-black text-md-h7">
         {{post.description}}
       </v-card-subtitle>
-      <v-divider class="ma-4" v-if="post.image_path || post.description"></v-divider>
       <v-card-text>
         <viewer
           :initialValue="post.contents"
@@ -57,6 +56,45 @@
         />
       </v-card-text>
       <Disqus class="ma-4"/>
+      <br/>
+      <div class="font-weight-bold mx-4 my-2">Related Posts</div>
+      <v-divider class="mx-4"></v-divider>
+      <v-row>
+        <v-col v-if="relatedPosts.length===0" class="text-center align-center justify-center my-10 font-weight-bold">
+          ポストが存在しません。
+        </v-col>
+        <v-col 
+          cols="12"
+          md="4"
+          v-else
+          v-for="relatedPost in relatedPosts"
+          :key="relatedPost.id"
+        >
+          <v-card class="mx-2" @click="movePage(relatedPost.id)">
+            <v-img
+              v-if="relatedPost.image_path"
+              :src="relatedPost.image_path"
+              class="white--text align-center justify-center"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="100"
+            >
+            </v-img>
+            <v-img
+              :src="require('@/assets/no_image.png')"
+              v-else
+              class="align-center justify-center"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              height="100"
+            >
+              <v-card-subtitle v-text="relatedPost.title" class="black--text text-center"></v-card-subtitle>
+            </v-img>
+            <v-card-subtitle height="50" class="font-weight-bold">
+              {{cutTitleLength(relatedPost.title)}}
+            </v-card-subtitle>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-divider class="mx-4 py-3"></v-divider>
       <post-move :beforePost="beforePost" :nextPost="nextPost" @movePage="movePage"/>
     </v-card>
   </div>
@@ -81,7 +119,7 @@ export default {
     'viewer' :Viewer,
   },
   computed: {
-    ...mapState("postModule", ["post","beforePost","nextPost","postLoading"]),
+    ...mapState("postModule", ["post","beforePost","nextPost","relatedPosts","postLoading"]),
     postId() {
       return this.$route.params.postId;
     },
@@ -111,6 +149,12 @@ export default {
     searchTag(tagName) {
       this.requestClearPosts();
       this.$router.push({ name: 'post-list-tag', params: {tagName} }).catch(() => {});
+    },
+    cutTitleLength(title){
+      if (title.length > 15) {
+        title = title.substr(0, 15) + '...';
+      }
+      return title;
     },
   },
 

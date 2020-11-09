@@ -12,7 +12,7 @@
       <v-card-text>
         <span 
           v-for="tag in tagList"
-          :key="tag"
+          :key="tag.id"
         >
           <v-hover v-slot="{ hover }">
             <v-chip

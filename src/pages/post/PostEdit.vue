@@ -57,7 +57,9 @@ export default {
     createFormData(data){
       let formData = new FormData();
       for (let key in data) {
-        formData.append(`board[${key}]`, data[key]);
+        if (data[key]) {
+          formData.append(`board[${key}]`, data[key]);
+        }
       }
       return formData;
     }

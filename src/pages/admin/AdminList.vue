@@ -40,7 +40,7 @@
                   {{callGetParseDate(post.created_at)}}
                 </v-card-subtitle>
                 <v-card-title class="pt-0 font-weight-black">
-                  {{post.title}}
+                  {{cutTitleLength(post.title)}}
                 </v-card-title>
                 <v-divider class="mx-4 pb-2"></v-divider>
                 <v-card-text>
@@ -160,7 +160,13 @@ export default {
       this.deletePost({postId});
       this.clearPosts();
       this.retrivePostList();
-    }
+    },
+    cutTitleLength(title){
+      if (title.length > 25) {
+        title = title.substr(0, 25) + '...';
+      }
+      return title;
+    },
   },
   components: {
     PageLoading,

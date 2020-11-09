@@ -23,14 +23,16 @@ export default {
     state.pageInfo = null;
     state.nextPost = [];
     state.beforePost = [];
+    state.relatedPosts = [];
     state.posts = [];
   },
-  [types.GET_POST_SUCCESS]: (state, { post, beforePost, nextPost}) => {
+  [types.GET_POST_SUCCESS]: (state, { post, beforePost, nextPost, relatedPosts}) => {
     state.postLoading = false;
     state.post = post;
     state.beforePost = beforePost;
     state.nextPost = nextPost;
     state.pageInfo = null;
+    state.relatedPosts = relatedPosts;
     state.posts = [];
   },
   [types.GET_POST_FAIL]: (state) => {
@@ -39,6 +41,7 @@ export default {
     state.pageInfo = null;
     state.nextPost = [];
     state.beforePost = [];
+    state.relatedPosts = [];
     state.posts = [];
   },
 

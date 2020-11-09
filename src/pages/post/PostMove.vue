@@ -1,7 +1,7 @@
 <template>
   <v-col class="d-flex md-0 move-page-content">
     <v-chip
-      class="ma-2 pl-0 mr-auto page-button left"
+      class="ma-2 pl-0 mr-auto page-button left text-sm-body-1"
       outlined
       label
       v-if="nextPost"
@@ -23,7 +23,7 @@
     >
     </v-chip>
     <v-chip
-      class="ma-2 pr-0 page-button right"
+      class="ma-2 pr-0 page-button right text-sm-body-1"
       outlined
       label
       v-if="beforePost"
