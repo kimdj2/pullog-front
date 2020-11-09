@@ -17,7 +17,7 @@
           <v-hover v-slot="{ hover }">
             <v-chip
               class="ma-1"
-              color="pink"
+              color="indigo lighten-3"
               label
               small
               text-color="white"

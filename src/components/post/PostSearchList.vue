@@ -49,7 +49,7 @@
                   {{callGetParseDate(post.created_at)}}
                 </v-card-subtitle>
                 <v-card-title class="pt-0 font-weight-black">
-                  {{post.title}}
+                  {{cutTitleLength(post.title)}}
                 </v-card-title>
                 <v-divider class="mx-4 pb-2"></v-divider>
                 <v-card-text>
@@ -59,7 +59,7 @@
                   >
                     <v-chip
                       class="ma-1"
-                      color="pink"
+                      color="indigo lighten-3"
                       label
                       small
                       text-color="white"
@@ -165,6 +165,12 @@ export default {
     searchTag(tagName) {
       this.requestClearPosts();
       this.$router.push({ name: 'post-list-tag', params: {tagName} }).catch(() => {});
+    },
+    cutTitleLength(title){
+      if (title.length > 60) {
+        title = title.substr(0, 60) + '...';
+      }
+      return title;
     },
   },
   components: {

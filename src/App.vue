@@ -13,5 +13,12 @@ export default {
 }
 .v-application{
   font-family: "M Plus 1p" !important;
+  code {
+    font-size: 1.1em !important;
+    font-weight: 500 !important;
+  }
+}
+.tui-editor-contents{
+  font-family: "M Plus 1p",'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', '나눔바른고딕', 'Nanum Barun Gothic', '맑은고딕', 'Malgun Gothic', sans-serif !important;
 }
 </style>

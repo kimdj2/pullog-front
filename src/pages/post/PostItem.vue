@@ -12,7 +12,7 @@
       v-else
     >
       <post-move :beforePost="beforePost" :nextPost="nextPost" @movePage="movePage"/>
-      <v-card-title class="pt-2 font-weight-black text-sm-h5">
+      <v-card-title class="pt-2 font-weight-black">
         {{post.title}}
       </v-card-title>
       <v-card-subtitle class="font-weight-black mx-2">
@@ -25,7 +25,7 @@
         >
         <v-chip
           class="ma-1"
-          color="pink"
+          color="indigo lighten-3"
           label
           small
           text-color="white"
@@ -38,7 +38,7 @@
         </v-chip>
         </span>
       </v-card-text>
-      <v-divider class="mx-4"></v-divider>
+      <v-divider class="mx-4 mb-4"></v-divider>
       <v-img
         v-if="post.image_path"
         :src="post.image_path"
@@ -61,7 +61,7 @@
       <v-divider class="mx-4"></v-divider>
       <v-row>
         <v-col v-if="relatedPosts.length===0" class="text-center align-center justify-center my-10 font-weight-bold">
-          ポストが存在しません。
+          関連のポストが存在しません。
         </v-col>
         <v-col 
           cols="12"

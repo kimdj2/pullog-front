@@ -13,9 +13,11 @@
     />
 </template>
 <script>
+import API from "@/utils/API";
 import 'codemirror/lib/codemirror.css'; 
 import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import hljs from 'highlight.js';
+import colorSyntax  from '@toast-ui/editor-plugin-color-syntax';
+import hljs from 'highlight.js/lib/highlight';
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/vue-editor'
 
@@ -31,7 +33,10 @@ export default {
       loading: true,
       editorText: '',
       editorOptions: {
-        plugins:[[codeSyntaxHighlight, {hljs}]],
+        plugins:[[codeSyntaxHighlight, {hljs}], colorSyntax],
+        hooks: {
+          addImageBlobHook: this.addImageBlobHook.bind(this),
+        },
       },
     };
   },
@@ -47,6 +52,22 @@ export default {
         value: markdown,
         html: html,
       });
+    },
+    addImageBlobHook(blob, callback) {
+      const data = new FormData();
+      data.append('image', blob);
+      const config = {
+        header: {
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+      API.post('/app/upload_image', data, config)
+        .then(res => {
+          callback(res.data.image_url, '');
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
   }
 };

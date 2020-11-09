@@ -932,6 +932,13 @@
   dependencies:
     highlight.js "^9.18.1"
 
+"@toast-ui/editor-plugin-color-syntax@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@toast-ui/editor-plugin-color-syntax/-/editor-plugin-color-syntax-1.0.1.tgz#d88564310d549b822316c74128c8249404bad357"
+  integrity sha512-8ZnVFmgKGArthwLpNrnax5xx6q+WRlIUXUAev8rQEVKyXKFuK+U/YySixR8FT516779AUObQ2Fpt4KlV1bzUbA==
+  dependencies:
+    tui-color-picker "^2.2.6"
+
 "@toast-ui/editor@^2.5.0":
   version "2.5.0"
   resolved "https://registry.npmjs.org/@toast-ui/editor/-/editor-2.5.0.tgz#02779b119eaa6dd7601249d75ca031e0b98400f1"
@@ -8214,6 +8221,18 @@ tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.npmjs.org/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
   integrity sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=
+
+tui-code-snippet@^2.2.0:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/tui-code-snippet/-/tui-code-snippet-2.3.2.tgz#39eb3ce46ea92043b3244f155797248535880c5d"
+  integrity sha512-6jGbM/m7A2L59lJSripwMVp87awrWgJXezlLV8GuAha3s0k01E4+MndoU5WlXd4dauVRgzHhKguTVslx/jMehw==
+
+tui-color-picker@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.npmjs.org/tui-color-picker/-/tui-color-picker-2.2.6.tgz#bab54e47380e550bb3ac8ae974021b3cc2518aa9"
+  integrity sha512-+GBTUFGOkDaFiyYt/4IJTKA68Oj7fC9lU+RHs56luyFHYSO3gWuvsZntxAvFFeCGiZFFhu9XQQaZ0rVS5TUOmA==
+  dependencies:
+    tui-code-snippet "^2.2.0"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

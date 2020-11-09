@@ -6,7 +6,7 @@
     ></v-skeleton-loader>
     <v-card color="transparent" v-else>
       <v-subheader>
-        <v-icon>mdi-tag-history</v-icon>
+        <v-icon>mdi-history</v-icon>
         Recent Posts
       </v-subheader>
       <v-card-text class="pa-0">
