@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import API from "@/utils/API";
 import { mapActions } from "vuex";
 
 export default {
@@ -52,7 +52,7 @@ export default {
     ...mapActions("postModule", ["requestClearPosts"]),
     retrieveTagList: async function(){
       this.loading = true;
-      const res = await axios.get('/app/taglist');
+      const res = await API.get('/app/taglist');
       this.tagList = res.data;
       this.loading = false;
     },

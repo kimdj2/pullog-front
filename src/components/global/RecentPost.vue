@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import API from "@/utils/API";
 import { mapActions } from "vuex";
 
 export default {
@@ -62,7 +62,7 @@ export default {
     ...mapActions("postModule", ["requestClearPosts"]),
     retrieveRecentPosts: async function(){
       this.loading = true;
-      const res = await axios.get('/app/recent_posts');
+      const res = await API.get('/app/recent_posts');
       this.recentPosts = res.data;
       this.loading = false;
     },

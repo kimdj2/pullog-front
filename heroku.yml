@@ -1,0 +1,9 @@
+build:
+  docker:
+    front: Dockerfile
+  config:
+    WORKDIR: app
+    API_URL: https://pullog-api.herokuapp.com
+run:
+  front: yarn prod-serve
+

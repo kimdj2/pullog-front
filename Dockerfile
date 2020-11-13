@@ -5,3 +5,11 @@ RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 
 RUN apk update && npm install -g @vue/cli
+
+COPY package*.json ./
+RUN yarn install
+
+COPY . $APP_HOME
+
+RUN yarn prod-build
+

@@ -27,7 +27,7 @@
 
 <script>
 import { mapActions } from "vuex";
-import axios from 'axios';
+import API from "@/utils/API";
 import { getParseMonth } from "@/utils/time"
 
 export default {
@@ -44,7 +44,7 @@ export default {
     ...mapActions("postModule", ["requestClearPosts"]),
     retrieveArchiveList: async function(){
       this.loading = true;
-      const res = await axios.get('/app/archive');
+      const res = await API.get('/app/archive');
       this.archives = res.data;
       this.loading = false;
     },

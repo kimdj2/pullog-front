@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "dev-serve": "vue-cli-service serve --mode development",
+    "prod-serve": "vue-cli-service serve --mode producution",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev-build": "vue-cli-service build --mode development",
+    "prod-build": "vue-cli-service build --mode producution"
   },
   "dependencies": {
     "@toast-ui/editor-plugin-code-syntax-highlight": "^1.0.0",

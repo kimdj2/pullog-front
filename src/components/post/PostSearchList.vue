@@ -121,7 +121,6 @@ export default {
       }, 100);
     },
     async infiniteHandler($state) {
-      console.log('bbb');
       //現在ページと全体ページ数が一致（最後のロードまで）する場合はロードしない
       if (this.pageInfo && this.pageInfo.current >= this.pageInfo.pages) {
         $state.complete();
