@@ -8,7 +8,7 @@
     "prod-serve": "vue-cli-service serve --mode producution --host 0.0.0.0",
     "build": "vue-cli-service build",
     "dev-build": "vue-cli-service build --mode development",
-    "prod-build": "vue-cli-service build --mode producution"
+    "prod-build": "vue-cli-service build --mode producution --host 0.0.0.0"
   },
   "dependencies": {
     "@toast-ui/editor-plugin-code-syntax-highlight": "^1.0.0",

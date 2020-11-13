@@ -11,5 +11,5 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn build
+RUN yarn prod-build
 
