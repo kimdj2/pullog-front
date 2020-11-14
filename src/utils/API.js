@@ -6,7 +6,9 @@ API.defaults.withCredentials = true;
 API.interceptors.request.use((config) => {
   console.log(process.env.VUE_APP_API_URL);
   const token = window.sessionStorage.getItem("token");
-  config.headers["authorization"] = `Bearer ${token}`;
+  if(token) {
+    config.headers["authorization"] = `Bearer ${token}`;
+  }
   config.headers["Cache-Control"] = 'no-cache';
   return config;
 });

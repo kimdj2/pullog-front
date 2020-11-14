@@ -3,7 +3,7 @@ build:
     web: Dockerfile
   config:
     WORKDIR: app
-    API_URL: https://pullog-api.herokuapp.com
+    VUE_APP_API_URL: https://pullog-api.herokuapp.com
 run:
-  web: node server.js
+  web: NODE_ENV=production node server.js
 
