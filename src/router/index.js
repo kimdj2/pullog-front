@@ -59,7 +59,7 @@ const routes = [
     path: "/admin",
     name: "admin-index",
     component: AdminIndex,
-    meta: { title: 'jinLoG', requiresAuth: true},
+    meta: { title: 'Pullog', requiresAuth: true},
     children: [
       {     
         path: "/admin/home",
