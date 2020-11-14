@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create();
-API.defaults.baseURL = process.env.API_URL || 'http://localhost';
+API.defaults.baseURL = process.env.VUE_APP_API_URL || 'http://localhost';
 API.interceptors.request.use((config) => {
   const token = window.sessionStorage.getItem("token");
   config.headers["authorization"] = `Bearer ${token}`;
