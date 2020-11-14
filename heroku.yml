@@ -5,5 +5,5 @@ build:
     WORKDIR: app
     API_URL: https://pullog-api.herokuapp.com
 run:
-  front: yarn prod-serve
+  front: node server.js
 
