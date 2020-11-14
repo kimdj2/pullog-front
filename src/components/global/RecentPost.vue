@@ -34,8 +34,8 @@
             >
               <v-card-subtitle v-text="post.title" class="black--text text-center"></v-card-subtitle>
             </v-img>
-            <v-card-subtitle height="50" class="font-weight-bold">
-              {{cutTitleLength(post.title)}}
+            <v-card-subtitle height="50" class="font-weight-bold" id="resent-post-title">
+              {{post.title}}
             </v-card-subtitle>
           </v-card>
         </v-col>
@@ -69,12 +69,13 @@ export default {
     movePage(postId) {
       this.$router.push({ name: 'post-item', params: { postId } });
     },
-    cutTitleLength(title){
-      if (title.length > 15) {
-        title = title.substr(0, 15) + '...';
-      }
-      return title;
-    },
   }
 }
 </script>
+<style lang="scss">
+  #resent-post-title {
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+  }
+</style>
