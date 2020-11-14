@@ -14,8 +14,8 @@
         color="teal lighten-4"
         v-for="archive in this.archives" :key="archive.id"
       >
-        <v-list-item-content>
-          <v-list-item-title @click="movePage(archive.month)">
+        <v-list-item-content @click="movePage(archive.month)">
+          <v-list-item-title>
             {{callGetParseMonth(archive.month)}}
             ({{archive.total_month}})
           </v-list-item-title>
