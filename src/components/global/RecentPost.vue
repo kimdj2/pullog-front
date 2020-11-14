@@ -34,8 +34,8 @@
             >
               <v-card-subtitle v-text="post.title" class="black--text text-center"></v-card-subtitle>
             </v-img>
-            <v-card-subtitle height="50" class="font-weight-bold" id="resent-post-title">
-              {{post.title}}
+            <v-card-subtitle height="50" class="font-weight-bold">
+              <span id="resent-post-title">{{post.title}}</span>
             </v-card-subtitle>
           </v-card>
         </v-col>
