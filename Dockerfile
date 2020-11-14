@@ -7,6 +7,7 @@ WORKDIR $APP_HOME
 RUN apk update && npm install -g @vue/cli
 
 COPY package*.json ./
+COPY .env* ./
 RUN yarn install
 
 COPY . .
