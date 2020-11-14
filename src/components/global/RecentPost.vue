@@ -32,9 +32,9 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="100"
             >
-              <v-card-subtitle v-text="post.title" class="black--text text-center" id="resent-post-title"></v-card-subtitle>
+              <v-card-subtitle v-text="post.title" class="black--text text-center"></v-card-subtitle>
             </v-img>
-            <v-card-subtitle height="50" class="font-weight-bold">
+            <v-card-subtitle height="50" class="font-weight-bold" id="resent-post-title">
               <span>{{post.title}}</span>
             </v-card-subtitle>
           </v-card>
