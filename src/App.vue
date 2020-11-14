@@ -14,7 +14,7 @@ export default {
 .v-application{
   font-family: "M Plus 1p" !important;
   code {
-    font-size: 1.1em !important;
+    font-size: 95% !important;
     font-weight: 500 !important;
   }
 }

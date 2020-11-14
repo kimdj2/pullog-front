@@ -48,7 +48,7 @@
                 <v-card-subtitle class="pb-0">
                   {{callGetParseDate(post.created_at)}}
                 </v-card-subtitle>
-                <v-card-title class="pt-0 font-weight-black">
+                <v-card-title class="pt-0 font-weight-black" id="post-list-title">
                   {{cutTitleLength(post.title)}}
                 </v-card-title>
                 <v-divider class="mx-4 pb-2"></v-divider>
@@ -177,3 +177,8 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+  #post-list-title {
+    font-size: 1.1rem;
+  }
+</style>

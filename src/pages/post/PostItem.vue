@@ -12,7 +12,7 @@
       v-else
     >
       <post-move :beforePost="beforePost" :nextPost="nextPost" @movePage="movePage"/>
-      <v-card-title class="pt-2 font-weight-black">
+      <v-card-title class="pt-2 font-weight-black" id="post-title">
         {{post.title}}
       </v-card-title>
       <v-card-subtitle class="font-weight-black mx-2">
@@ -160,3 +160,8 @@ export default {
 
 }
 </script>
+<style lang="scss">
+  #post-title {
+    font-size: 1.5rem;
+  }
+</style>
