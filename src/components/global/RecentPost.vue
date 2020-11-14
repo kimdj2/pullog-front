@@ -32,10 +32,10 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="100"
             >
-              <v-card-subtitle v-text="post.title" class="black--text text-center"></v-card-subtitle>
+              <v-card-subtitle v-text="post.title" class="black--text text-center" id="resent-post-title"></v-card-subtitle>
             </v-img>
             <v-card-subtitle height="50" class="font-weight-bold">
-              <span id="resent-post-title">{{post.title}}</span>
+              <span>{{post.title}}</span>
             </v-card-subtitle>
           </v-card>
         </v-col>
@@ -74,8 +74,8 @@ export default {
 </script>
 <style lang="scss">
   #resent-post-title {
+    white-space: nowrap;
     overflow: hidden;
-    text-align: left;
     text-overflow: ellipsis;
   }
 </style>
