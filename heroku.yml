@@ -1,9 +1,9 @@
 build:
   docker:
-    front: Dockerfile
+    web: Dockerfile
   config:
     WORKDIR: app
     API_URL: https://pullog-api.herokuapp.com
 run:
-  front: node server.js
+  web: node server.js
 
