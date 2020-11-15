@@ -1,6 +1,7 @@
 <template>
-  <v-responsive max-width="300">
+  <v-responsive :max-width="maxWidth">
     <v-text-field
+      :class="textClass"
       prepend-inner-icon="mdi-magnify"
       background-color="teal lighten-4"
       single-line
@@ -22,6 +23,20 @@ export default {
       keyword:'',
     }
   }, 
+  computed: {
+    maxWidth() { 
+      if (!this.$vuetify.breakpoint.smAndDown) {
+        return "300";
+      }
+      return "100%";
+    },
+    textClass() {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return "pt-0 pb-2";
+      }
+      return "";
+    }
+  },
   methods: {
     ...mapActions("postModule", ["requestClearPosts"]),
     search(event) {

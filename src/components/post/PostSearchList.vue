@@ -1,6 +1,9 @@
 <template>
   <div>
     <v-row dense v-masonry transition-duration="0s">
+      <v-col cols="12" v-if="isMobile">
+        <SearchForm />
+      </v-col>
       <v-col
         v-for="post in posts"
         :key="post.id"
@@ -31,7 +34,8 @@
                   :src="post.image_path"
                   class="white--text align-center justify-center"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  min-height="150"
+                  :min-height="minHeight"
+                  :max-height="maxHeight"
                   @load="masonryLoad"
                 >
                 </v-img>
@@ -40,7 +44,8 @@
                   v-else
                   class="align-center justify-center"
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  min-height="150"
+                  :min-height="minHeight"
+                  :max-height="maxHeight"
                   @load="masonryLoad"
                 >
                   <v-card-subtitle v-text="post.title" class="black--text text-center font-weight-bold text-h6"></v-card-subtitle>
@@ -90,6 +95,7 @@
 import { mapActions, mapState } from "vuex";
 import {getParseDate} from "@/utils/time"
 import PageLoading from "@/components/post/PostLoading.vue"
+import SearchForm from "@/components/form/SearchForm.vue"
 
 export default {
   name: "PostSearchList",
@@ -112,6 +118,21 @@ export default {
     search() {
       return this.$route.params.search;
     },
+    minHeight() { 
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return 200;
+      }
+      return 150;
+    },
+    maxHeight() { 
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return 200;
+      }
+      return null;
+    },
+    isMobile() {
+      return this.$vuetify.breakpoint.smAndDown
+    }
   },
   methods: {
     ...mapActions("postModule", ["getPostList", "clearPosts","requestClearPosts"]),
@@ -174,6 +195,7 @@ export default {
   },
   components: {
     PageLoading,
+    SearchForm,
   }
 };
 </script>
