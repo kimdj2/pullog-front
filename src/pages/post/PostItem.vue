@@ -126,7 +126,6 @@ export default {
   },
   async mounted () {
     await this.getPost({postId: this.postId});
-    document.title = this.post.title + ' | Pullog';
   },
   data() {
     return {
@@ -158,6 +157,35 @@ export default {
       return title;
     },
   },
+  // vue-meta 設定
+  metaInfo() {
+    let post = this.post
+    return {
+      title: post ? post.title : 'Engineer Blog',
+      titleTemplate: '%s | Pullog',
+      htmlAttrs: {
+        lang: 'ja-JP',
+        dir: 'ltr'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'description', content: post ? post.description : 'Pullog Engineer Blog', vmid: 'description' },
+        { name: 'keywords', content: post ? post.tag_list.join() : 'java, python, rails, ruby, nginx, aws, vue, javascript' },
+        { name: 'author', content: 'inoshishi' },
+        {
+          property: 'og:title',
+          content: post ? post.title : 'Engineer Blog',
+          template: chunk => `${chunk} | Pullog`,
+          vmid: 'og:title'
+        },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      ],
+    }
+  },
+  async beforeRouterEnter(to, from, next) {
+    await this.getPost({postId: this.postId});
+    next();
+  }
 }
 </script>
 <style lang="scss">

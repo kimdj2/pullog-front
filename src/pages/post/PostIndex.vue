@@ -28,28 +28,6 @@ export default {
     Sidebar,
     Footer
   },
-  // vue-meta 設定
-  metaInfo: {
-    title: 'Pullog | Engineer blog',
-    htmlAttrs: {
-      lang: 'ja-JP',
-      dir: 'ltr'
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'description', content: 'Pullog engineer blog', vmid: 'description' },
-      { name: 'keywords', content: 'rails, ruby, python, nginx, aws, java' },
-      { name: 'author', content: 'inoshishi' },
-      {
-        property: 'og:title',
-        content: 'Pullog',
-        template: chunk => `${chunk} | Engineer blog`,
-        vmid: 'og:title'
-      },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    ],
-  },
-
 }
 </script>
 
