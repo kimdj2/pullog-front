@@ -124,7 +124,7 @@ export default {
       return this.$route.params.postId;
     },
   },
-  async mounted () {
+  async created () {
     await this.getPost({postId: this.postId});
   },
   data() {
