@@ -9,7 +9,7 @@ export default {
     try {
       const res = await API.post("app/auth_user", formData);
       const token = res.data.auth_token;
-      window.sessionStorage.setItem("token", token);
+      window.localStorage.setItem("token", token);
       commit(types.LOGIN_SUCCESS, token);
       router.push({ name: "admin-home" });
     } catch (error) {
@@ -19,7 +19,7 @@ export default {
   },
   async loadUser({ commit, dispatch }) {
     commit(types.LOAD_USER_PENDING);
-    const token = window.sessionStorage.getItem("token");
+    const token = window.localStorage.getItem("token");
     if (!token) {
       commit(types.LOAD_USER_FAIL);
       return null;
