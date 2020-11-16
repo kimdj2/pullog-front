@@ -7,6 +7,7 @@ import { VueMasonryPlugin } from 'vue-masonry';
 import InfiniteLoading from 'vue-infinite-loading'
 import VueDisqus from 'vue-disqus'
 import VueGtag from 'vue-gtag'
+import Meta from 'vue-meta';
 
 
 Vue.use(VueMasonryPlugin);
@@ -20,7 +21,7 @@ Vue.use(VueGtag, {
 Vue.use(VueDisqus, {
   shortname: 'Pullog'
 })
-
+Vue.use(Meta);
 Vue.config.productionTip = false
    
 new Vue({

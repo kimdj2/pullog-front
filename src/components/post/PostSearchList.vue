@@ -196,7 +196,7 @@ export default {
   components: {
     PageLoading,
     SearchForm,
-  }
+  },
 };
 </script>
 <style lang="scss">

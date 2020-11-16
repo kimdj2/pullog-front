@@ -124,8 +124,9 @@ export default {
       return this.$route.params.postId;
     },
   },
-  mounted () {
-    this.getPost({postId: this.postId});
+  async mounted () {
+    await this.getPost({postId: this.postId});
+    document.title = this.post.title + ' | Pullog';
   },
   data() {
     return {
@@ -157,7 +158,6 @@ export default {
       return title;
     },
   },
-
 }
 </script>
 <style lang="scss">

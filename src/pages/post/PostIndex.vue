@@ -28,6 +28,20 @@ export default {
     Sidebar,
     Footer
   },
+  // vue-meta 設定
+  metaInfo: {
+    htmlAttrs: {
+      lang: 'ja-JP',
+      dir: 'ltr'
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'description', content: 'Pullog engineer blog', vmid: 'description' },
+      { name: 'keywords', content: 'rails, ruby, python, java, nginx' },
+      { name: 'author', content: 'inoshishi' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ],
+  },
 }
 </script>
 

@@ -26,8 +26,10 @@
     "vue": "^2.6.11",
     "vue-disqus": "^4.0.1",
     "vue-gtag": "^1.10.0",
+    "vue-head": "^2.2.0",
     "vue-infinite-loading": "^2.4.5",
     "vue-masonry": "^0.11.8",
+    "vue-meta": "^2.4.0",
     "vue-router": "^3.4.7",
     "vuetify": "^2.2.11",
     "vuex": "^3.5.1"
