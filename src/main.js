@@ -6,10 +6,17 @@ import router from "./router";
 import { VueMasonryPlugin } from 'vue-masonry';
 import InfiniteLoading from 'vue-infinite-loading'
 import VueDisqus from 'vue-disqus'
+import VueGtag from 'vue-gtag'
 
 
 Vue.use(VueMasonryPlugin);
 Vue.use(InfiniteLoading);
+Vue.use(VueGtag, {
+  config: {
+      id: 'G-6MNEJPKVRM'
+  }
+});
+
 Vue.use(VueDisqus, {
   shortname: 'Pullog'
 })
