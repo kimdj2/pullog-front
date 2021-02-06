@@ -13,7 +13,11 @@ import { mapState } from "vuex";
 export default {
   name: "PostList",
   computed: {
-    ...mapState("postModule", ["postLoading"]),
+    ...mapState({
+      posts: 'postModule/posts',
+      pageInfo: 'postModule/pageInfo',
+      clearPostsFlg: 'postModule/clearPostsFlg',
+    }),
   },
   components: {
     PostSearchList,

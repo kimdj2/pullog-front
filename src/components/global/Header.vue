@@ -6,9 +6,7 @@
     >
       <v-container class="py-0 fill-height">
         <v-img
-          :src="require('@/assets/logo.png')"
-          max-height="50"
-          max-width="100"
+          :src="require('@/assets/Kim_Dongjin.png')"
           contain
           @click="moveHome"
         ></v-img>

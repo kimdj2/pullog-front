@@ -196,6 +196,7 @@ export default {
   components: {
     PageLoading,
     SearchForm,
+    infiniteLoading
   },
   // vue-meta 設定
   metaInfo: {
